@@ -1,4 +1,4 @@
-FROM nginx:alpine
+FROM nginx:alpine-slim
 
 # Remove the original config
 RUN rm /etc/nginx/nginx.conf
