@@ -14,7 +14,7 @@ services:
       context: ..
       dockerfile: ./.build/flask/flask.Dockerfile
     container_name: my-flask-container
-    ports:
-      - "5000:5000"
+    #ports:
+    #  - "5000:5000"
     volumes:
       - ../backend/server.py:/app/server.py
