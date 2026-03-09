@@ -1,8 +1,8 @@
 services:
   nginx:
     build:
-      context: .
-      dockerfile: ./nginx/nginx.Dockerfile
+      context: ..
+      dockerfile: .build/nginx/nginx.Dockerfile
     container_name: my-nginx-container
     ports:
       - "80:80"
@@ -12,9 +12,7 @@ services:
   flask:
     build:
       context: ..
-      dockerfile: ./.build/flask/flask.Dockerfile
+      dockerfile: .build/flask/flask.Dockerfile
     container_name: my-flask-container
     #ports:
     #  - "5000:5000"
-    volumes:
-      - ../backend/server.py:/app/server.py

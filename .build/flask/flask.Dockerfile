@@ -1,10 +1,10 @@
-FROM python:3.15.0a6-slim-trixie
+FROM python:3.12-slim
 
 WORKDIR /app
 
-COPY ../../backend/server.py server.py
+COPY backend/server.py /app/server.py
+COPY ./.build/flask/requirements.txt requirements.txt
 
-COPY flask/requirements.txt .
 
 RUN pip install --no-cache-dir -r requirements.txt
 
