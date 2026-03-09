@@ -22,3 +22,7 @@ Solution:
 Adjusted upstream {}
   - Docker networks change the way containers communicate, updated the server address to use the service name (`flask`) instead of `localhost` to resolve correctly.
   - Removed port block within the docker-compose.yml file since the service name resolves internally and is therefore redundant.
+  
+Adjust block in dockerfile
+  - Redundant COPY usage, when volume mounting config in the compose file
+  - Modify compose file context to root path, update paths references due to new context change
