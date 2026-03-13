@@ -16,3 +16,13 @@ services:
     container_name: my-flask-container
     #ports:
     #  - "5000:5000"
+
+  mongo:
+    image: mongo:8.2.5-noble
+    restart: always
+    environment:
+      MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
+      MONGO_INITDB_ROOT_PASSWORD: ${MONGO_ROOT_PASSWORD}
+    container_name: my-mongo-container
+    ports:
+      - "27017:27017"
