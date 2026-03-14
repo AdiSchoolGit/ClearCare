@@ -26,3 +26,5 @@ services:
     container_name: my-mongo-container
     ports:
       - "27017:27017"
+    volumes:
+      - ../data:/data
