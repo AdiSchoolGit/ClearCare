@@ -4,3 +4,20 @@ app
     - Repositories <-- DB queries
     - Services <-- Logic handling, where to send user input
     - Routes <-- Interactions between the frontend and the services
+
+  
+# 3/14/26
+  
+Creation of clients folder within webserver app directory
+  - Start implementation of Google Places API client (geocoding, nearby search)
+      - nearby search caps search radius
+      - only accepts search radius in meters, so convert miles to meters before passing to API
+  - Returns JSON <-- Probably requires extra configuration to work with BSON which is the format that MongoDB uses
+  - Create new .env file for API keys within the clients folder
+  - Creation of constants folder within app directory
+      Store constants e.g. distance conversions for usage within API client files
+  
+Service created
+  - hospitalSearch.py 
+      2 arguments required zip & radius in miles from 5 to 25, increments of 5 only. Should be handled by frontend with a dropdown menu. There exists a check within the service to ensure the radius is within the valid range. However preventing invalid input at the source ensures that the service is not called with unexpected values.
+  - create service folder within app directory
