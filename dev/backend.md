@@ -21,3 +21,14 @@ Service created
   - hospitalSearch.py 
       2 arguments required zip & radius in miles from 5 to 25, increments of 5 only. Should be handled by frontend with a dropdown menu. There exists a check within the service to ensure the radius is within the valid range. However preventing invalid input at the source ensures that the service is not called with unexpected values.
   - create service folder within app directory
+
+  # 3/15/26
+  
+  Creation of utils folder within app directory
+   -   Create jsonHandling.py file within utils folders
+    Handles future DB retrivals by converting BSON only objects to JSON for use in the frontend
+    Using BasedPyRight language servers have issues with modifying the default signature of DefaultJSONProvider
+    Relating to language server issues BSON imports are seen as missing modules, despite packaged with pymongo
+      Attempted uninstalling BSON, pymongo then reinstalling pymongo only. 
+      Error still highlighted despite this file still working
+   -

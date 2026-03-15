@@ -22,7 +22,7 @@ def search_nearby_hospitals(
 
     body = {
         "includedTypes": ["hospital"],
-        "maxResultCount": 20,
+        "maxResultCount": 20,  # Edit as desired
         "locationRestriction": {
             "circle": {
                 "center": {
