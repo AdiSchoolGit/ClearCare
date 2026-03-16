@@ -2,6 +2,14 @@
 .venv
 data
 .venv/
-backend/app/__pycache__/
 *.pyc
-backend/app/clients/.env
+backend/.env
+
+backend/app/__pycache__/
+backend/app/services/__pycache__
+backend/app/clients/__pycache__
+backend/app/constants/__pycache__
+backend/app/utils/__pycache__
+backend/tests/__pycache__
+backend/.pytest_cache
+backend/tests/.pytest_cache

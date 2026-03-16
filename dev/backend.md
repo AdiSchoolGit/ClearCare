@@ -25,7 +25,7 @@ Service created
   # 3/15/26
   
   Creation of utils folder within app directory
-   -   Create bsonHandling.py file within utils folders
+   - Create bsonHandling.py file within utils folders
     Handles future DB retrievals by converting BSON only objects to JSON for use in the frontend
     Using BasedPyRight language servers have issues with modifying the default signature of DefaultJSONProvider
     Relating to language server issues BSON imports are seen as missing modules, despite packaged with pymongo
@@ -34,4 +34,14 @@ Service created
    - Create repositories folder
     - Create example repo file which implements the READ logic which will be used in services under actual GET methods
     - Modify normalizationHandling within utils to normalize lists as well which just goes through documents within a collection
-   -
+
+   Create test folder
+    - Configure PyTest within backend/pytext.ini
+    - Creation of test files
+      Must start or end with test_* or *_test to be valid
+      @patch will include the functions being tested without importing them
+    - Special case:
+      To test actual API calls, use `pytest.mark.*` with `*` serving as a placeholder for the actual test function
+      Which does require adding the marker to the `pytest.ini`
+      USES ACTUAL API TOKENS from API key so use at own risk
+      Currently max number of concurrent API calls is 20 from the geocoding API
