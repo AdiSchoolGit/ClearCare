@@ -1,5 +1,3 @@
-# backend/app/routes/search_routes.py
-
 from app.services.hospitalSearch import find_hospitals_by_zip
 from flask import Blueprint, jsonify, request
 
@@ -27,6 +25,6 @@ def search_hospitals():
     except ValueError as exc:
         return jsonify({"error": str(exc)}), 400  # Bad Request (Client-Side)
     except Exception:
-        return jsonify({"error": "Unable to search hospitals"}), 500
-        # Internal Server Error (Server-Side)
-        # Still debating if to throw 501 instead
+        return jsonify(
+            {"error": "Unable to search hospitals"}
+        ), 500  # Internal Server Error (Server-Side)

@@ -23,7 +23,7 @@ class MongoJSONProvider(DefaultJSONProvider):
 
     @staticmethod
     def default(obj):
-        # Handle ObjectID from MongoDB t JSON string
+        # Handle ObjectID from MongoDB to JSON string
         if isinstance(obj, ObjectId):
             return str(obj)
         # Handles datetime like above but with ISO format which is a standard JSON datetime format

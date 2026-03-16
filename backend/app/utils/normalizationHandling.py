@@ -13,8 +13,5 @@ def normalize_doc(doc):
     return doc
 
 
-"""
-Usage expected when interacting with DB
-Probably going to define some "repositories" folder
-which is going to have all the DB interaction logic
-"""
+def normalize_list(docs):
+    return [normalize_doc(doc) for doc in docs]
