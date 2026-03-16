@@ -35,8 +35,8 @@ Edits made over couple of days
     - repositories
       Database interactions e.g. CRUD operations on the database
     - routes
-      
+      Defines the API endpoints and their handlers
     - services
-      Contains logic used within 
+      Contains business logic and service layer operations
     - utils
-  -
+      Contains utility functions used across the application e.g. conversions of BSON objects to types used in JSON serialization
