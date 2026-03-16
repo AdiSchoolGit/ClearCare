@@ -35,3 +35,8 @@ How to login to mongo through compass
     - Replace {user} and {password} with your actual credentials
   - Alternatively if the connection fails despite `docker ps` returning that the container is running and actively listening on the default port
     - append `?authSource=admin` to the connection string
+
+  # 3/16/26
+  
+  Adjust docker compose image options for ARM developers
+    - Linux Engine on docker desktop is still required

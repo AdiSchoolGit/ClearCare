@@ -26,3 +26,7 @@ Adjusted upstream {}
 Adjust block in dockerfile
   - Redundant COPY usage, when volume mounting config in the compose file
   - Modify compose file context to root path, update paths references due to new context change
+
+# 3/16/26
+
+Adjust dockerfile image options for ARM developers
