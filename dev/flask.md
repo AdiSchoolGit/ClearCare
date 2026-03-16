@@ -25,4 +25,18 @@ Edits made over couple of days
   - `tests` containing test files which are separate from the main app code 
     - A portion of the test files are hardcoded values which are tested
     - External API calls are done which are done through the `real` marker within the pytest suite
+  - `server.py` replaced with `run.py` in `backend` and `__init.py__` located within the `app` folder
+    - Common expected app format after looking at various tutorials
+  - `app` folder structure
+    - constants 
+      Contains constant values e.g. conversions ensuring consistent formatting
+    - clients
+      Contains external API calls e.g. Google Places (NEW) API which contains nearbySearch used within `googlePlacesClient` 
+    - repositories
+      Database interactions e.g. CRUD operations on the database
+    - routes
+      
+    - services
+      Contains logic used within 
+    - utils
   -
