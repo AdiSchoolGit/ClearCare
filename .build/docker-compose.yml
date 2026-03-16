@@ -33,6 +33,7 @@ services:
 
   mongo:
     image: mongo:8.2.5-noble
+    # image: arm64v8/mongo:8.2.5-noble
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
