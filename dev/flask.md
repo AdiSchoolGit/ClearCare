@@ -40,3 +40,5 @@ Edits made over couple of days
       Contains business logic and service layer operations
     - utils
       Contains utility functions used across the application e.g. conversions of BSON objects to types used in JSON serialization
+
+Modify dockerfile to use arm64v8/python:3.12-slim image for ARM development
