@@ -1,5 +1,5 @@
-FROM nginx:1.29.5-alpine-slim
-#FROM arm64v8/nginx:1.29.5-alpine-slim
+#FROM nginx:1.29.5-alpine-slim
+FROM arm64v8/nginx:1.29.5-alpine-slim
 
 # Remove the original config
 #RUN rm /etc/nginx/nginx.conf
