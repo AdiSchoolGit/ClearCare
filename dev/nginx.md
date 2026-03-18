@@ -30,3 +30,7 @@ Adjust block in dockerfile
 # 3/16/26
 
 Adjust dockerfile image options for ARM developers
+
+# 3/18/26 
+
+Edit config in preparation for frontend related components (anticipated) to be hosted on port 3000
