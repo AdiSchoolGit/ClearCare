@@ -1,4 +1,5 @@
 from app.services.hospitalSearch import find_hospitals_by_zip
+from app.services.pricingService import enrich_hospitals_with_pricing
 from flask import Blueprint, jsonify, request
 
 bp = Blueprint("search", __name__, url_prefix="/api/search")
@@ -12,6 +13,8 @@ bp = Blueprint("search", __name__, url_prefix="/api/search")
 def search_hospitals():
     zip_code = request.args.get("zip")
     radius = request.args.get("radius", default=10, type=int)
+    insurance = request.args.get("insurance", default="uninsured")
+    procedure = request.args.get("procedure", default="general_visit")
 
     # HTTP response codes
     if not zip_code:
@@ -21,6 +24,11 @@ def search_hospitals():
 
     try:
         results = find_hospitals_by_zip(zip_code, radius)
+        # Enrich results with pricing information
+        if "places" in results:
+            results["places"] = enrich_hospitals_with_pricing(
+                results["places"], insurance, procedure
+            )
         return jsonify(results), 200  # OK
     except ValueError as exc:
         return jsonify({"error": str(exc)}), 400  # Bad Request (Client-Side)
