@@ -116,7 +116,24 @@ export default function SearchBox() {
 
   const calculateAdjustedPricing = (hospital: Hospital) => {
     const baseCost = hospital.pricing?.base_cost || 350;
-    const insuranceCoverage = hospital.pricing?.insurance_coverage || 0;
+
+    // Calculate insurance coverage based on selected insurance type
+    let insuranceCoveragePercent = 0;
+    switch (insuranceType) {
+      case 'private':
+        insuranceCoveragePercent = 0.80; // 80% coverage
+        break;
+      case 'medicare':
+        insuranceCoveragePercent = 0.70; // 70% coverage
+        break;
+      case 'medicaid':
+        insuranceCoveragePercent = 0.85; // 85% coverage
+        break;
+      case 'uninsured':
+      default:
+        insuranceCoveragePercent = 0; // No coverage
+        break;
+    }
 
     let adjustedBaseCost = baseCost;
     let newPatientFee = 0;
@@ -134,6 +151,7 @@ export default function SearchBox() {
     }
 
     const totalCost = adjustedBaseCost + newPatientFee + noReferralFee + emergencySurcharge;
+    const insuranceCoverage = Math.round(totalCost * insuranceCoveragePercent);
     const youPay = Math.max(0, totalCost - insuranceCoverage);
 
     return {
