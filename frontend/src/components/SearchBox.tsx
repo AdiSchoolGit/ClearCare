@@ -75,7 +75,7 @@ export default function SearchBox() {
 
     try {
       const response = await fetch(
-        `http://localhost:5001/api/search/hospitals?zip=${zipCode}&radius=${radius}&insurance=${insuranceType}&procedure=${procedureType}`
+        `/api/search/hospitals?zip=${zipCode}&radius=${radius}&insurance=${insuranceType}&procedure=${procedureType}`
       );
       const data = await response.json();
 
@@ -135,7 +135,7 @@ export default function SearchBox() {
         break;
     }
 
-    let adjustedBaseCost = baseCost;
+    const adjustedBaseCost = baseCost;
     let newPatientFee = 0;
     let noReferralFee = 0;
     let emergencySurcharge = 0;

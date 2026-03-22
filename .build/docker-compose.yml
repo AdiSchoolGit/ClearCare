@@ -32,8 +32,7 @@ services:
     #  - "5000:5000"
 
   mongo:
-    #image: mongo:8.2.5-noble
-    image: arm64v8/mongo:8.2.5-noble
+    image: mongo:8.2.5-noble
     restart: always
     environment:
       MONGO_INITDB_ROOT_USERNAME: ${MONGO_ROOT_USERNAME}
@@ -43,3 +42,9 @@ services:
       - "27017:27017"
     volumes:
       - ../data:/data
+
+  nextjs:
+    build:
+      context: ..
+      dockerfile: .build/nextjs/nextjs.Dockerfile
+    container_name: my-nextjs-container

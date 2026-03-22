@@ -12,28 +12,28 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
         primary: {
-          50: "#e6f3f8",
-          100: "#cce7f1",
-          200: "#99cfe3",
-          300: "#66b7d5",
-          400: "#339fc7",
-          500: "#0087b9", // Main healthcare blue
-          600: "#006c94",
-          700: "#00516f",
-          800: "#00364a",
-          900: "#001b25",
-        },
-        secondary: {
           50: "#e8f5e9",
           100: "#c8e6c9",
           200: "#a5d6a7",
           300: "#81c784",
           400: "#66bb6a",
-          500: "#4caf50", // Healthcare green
+          500: "#4caf50", // Healthcare green (now primary)
           600: "#43a047",
           700: "#388e3c",
           800: "#2e7d32",
           900: "#1b5e20",
+        },
+        secondary: {
+          50: "#e6f3f8",
+          100: "#cce7f1",
+          200: "#99cfe3",
+          300: "#66b7d5",
+          400: "#339fc7",
+          500: "#0087b9", // Healthcare blue (now secondary)
+          600: "#006c94",
+          700: "#00516f",
+          800: "#00364a",
+          900: "#001b25",
         },
         accent: {
           50: "#fff8e1",

@@ -22,7 +22,7 @@ export default function Hero() {
           {/* Subheadline */}
           <p className="text-lg sm:text-xl text-neutral-600 mb-10 max-w-2xl mx-auto leading-relaxed">
             Compare healthcare costs based on your insurance, procedure type, and location.
-            Whether you're insured or not, find affordable care that fits your needs.
+            Whether you&apos;re insured or not, find affordable care that fits your needs.
           </p>
 
           {/* Search Box */}
